@@ -12,11 +12,29 @@
 
 // Todo Esercizio 2. Dare la possibilità di inserire due parole. Verificare tramite una funzione che le due parole abbiano la stessa lunghezza. Se hanno la stessa lunghezza, stamparle entrambe altrimenti stampare la più lunga delle due.
 
+var parola1 = prompt('Scrivere la prima parola');
+var parola2 = prompt('Scrivere la seconda parola');
+
+parola1 = parola1[0].toUpperCase() +  parola1.substring(1).toLowerCase();
+parola2 = parola2[0].toUpperCase() +  parola2.substring(1).toLowerCase();
 
 
 
+function lunghezza(par1, par2){
 
+    var risultato = par1 + ' è più lunga di ' + par2;
 
+    if (par1.length == par2.length){
+        risultato = par1 + ' e ' + par2 + ' hanno la stessa lunghezza';
+    } else if (par1.length < par2.length){
+        risultato = par2 + ' è più lunga di ' + par1;
+    }
+    return risultato;
+}
+
+var parole = lunghezza(parola1, parola2);
+
+document.getElementById('div').innerHTML = parole;
 
 
 
@@ -71,7 +89,7 @@ var parola = prompt('Inserisci una parola');
 
 function capitalize(string){
 
-    // * Nella funzione mettiamo la string = a string[0], ovvero la prima lettera della parola, che dovrà essere maiuscola con toUpperCase + string.substring(1) il quale indica che tutto ciò che ne segue della stessa parola, sarà trascritta in minuscolo.
+    // * Nella funzione mettiamo la string = string[0], ovvero la prima lettera della parola [0], che dovrà essere maiuscola con toUpperCase + string.substring(1) il quale indica che tutto ciò che ne segue della stessa parola, sarà trascritta in minuscolo.
     
     string = string[0].toUpperCase() +  string.substring(1).toLowerCase();
     
@@ -84,4 +102,9 @@ function capitalize(string){
     
 }
 
-console.log(capitalize(parola));
+var maiuscola = capitalize(parola);
+console.log(maiuscola);
+
+
+// * oppure
+// * console.log(capitalize(parola));

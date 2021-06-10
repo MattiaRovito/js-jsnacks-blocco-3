@@ -35,11 +35,11 @@ function unisci(array1, array2){
 
     var arrayCumulativo = [];
     
-    // *Mettiamo un controllo: SE la lunghezza dei due array da cumulare è uguale, allora fai il FOR, altrimenti alert.
-    
+    // * Mettiamo un controllo: SE la lunghezza dei due array da cumulare è uguale, allora fai il FOR, altrimenti alert.
+
     if (array1.length == array2.length){
 
-        // *In questo caso mettere i < array1.length o array2.length è la stessa cosa, perché richiediamo la stessa lunghezza.
+        // * In questo caso mettere i < array1.length o array2.length è la stessa cosa, perché richiediamo la stessa lunghezza.
 
         for(var i = 0; i < array1.length; i++){
             arrayCumulativo.push(array1[i], array2[i]);
@@ -51,7 +51,7 @@ function unisci(array1, array2){
    
 }
 
-// *Creiamo una variabile per far 'attivare' la funzione, quindi facciamo il console.log della variabile (o i vari document.getElementById...)
+// * Creiamo una variabile per far 'attivare' la funzione, quindi facciamo il console.log della variabile (o i vari document.getElementById...)
 
 var terzoArray = unisci(primoArray, secondoArray);
 console.log (terzoArray);
@@ -64,3 +64,24 @@ console.log (terzoArray);
 
 
 // Todo Esercizio 4. Scrivi una funzione che prenda una stringa e la trasformi con l'iniziale maiuscola e tutto il resto in minuscolo.
+
+var parola = prompt('Inserisci una parola');
+
+
+
+function capitalize(string){
+
+    // * Nella funzione mettiamo la string = a string[0], ovvero la prima lettera della parola, che dovrà essere maiuscola con toUpperCase + string.substring(1) il quale indica che tutto ciò che ne segue della stessa parola, sarà trascritta in minuscolo.
+    
+    string = string[0].toUpperCase() +  string.substring(1).toLowerCase();
+    
+    return string;
+
+    // ! Un altro modo per scrivere all'interno della funzione è il seguente:
+
+    // ? return string = string[0].toUpperCase() +  string.substring(1).toLowerCase();
+
+    
+}
+
+console.log(capitalize(parola));
